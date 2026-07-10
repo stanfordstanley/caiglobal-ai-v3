@@ -74,3 +74,4 @@ in place. Shared visual styling (colors, spacing, type) lives in
 - No photography is currently used; the visual system relies on an abstract
   SVG "orbit" motif and typography. Add real photography to `img/` and
   reference it directly in each page's `<section class="hero">` if desired.
+
