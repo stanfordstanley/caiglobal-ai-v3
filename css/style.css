@@ -48,9 +48,13 @@ header{
   border-bottom:1px solid var(--line);
 }
 nav.wrap{display:flex;align-items:center;justify-content:space-between;height:74px;}
-.logo{display:flex;flex-direction:column;line-height:1.1;}
+.logo{display:flex;align-items:center;gap:14px;line-height:1.1;color:inherit;}
+.logo-img{height:44px;width:auto;flex-shrink:0;display:block;}
+.logo-text{display:flex;flex-direction:column;justify-content:center;}
 .logo .name{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;color:var(--ink);letter-spacing:0.01em;}
-.logo .sub{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--silver);letter-spacing:0.06em;margin-top:3px;}
+.logo .sub{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--silver);letter-spacing:0.06em;max-width:220px;}
+footer .logo .name{color:var(--on-navy);}
+footer .logo .sub{color:var(--on-navy-silver);}
 .nav-links{display:flex;gap:30px;align-items:center;}
 .nav-links a{font-size:13.5px;color:var(--silver);transition:color .2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--ink);}
