@@ -192,6 +192,44 @@ section.block{padding:100px 0;border-bottom:1px solid var(--line);}
 .news-row .credit{margin-top:10px;font-size:12.5px;color:var(--accent);font-family:'IBM Plex Mono',monospace;}
 @media(max-width:640px){.news-row{grid-template-columns:1fr;gap:8px;}}
 
+/* WHITE PAPER DOWNLOADS ---------------------------------------------------*/
+.downloads {
+  margin-top: 24px;
+}
+
+.downloads .mono {
+  display: block;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 14px;
+  letter-spacing: 0.08em;
+}
+
+.paper-download {
+  margin-bottom: 14px;
+}
+
+.paper-download a {
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.paper-download a:hover {
+  text-decoration: underline;
+}
+
+/* LUMA EVENT LINK ---------------------------------------------------------*/
+.luma-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.luma-link:hover {
+  text-decoration: underline;
+}
+
 /* PORTFOLIO ---------------------------------------------------------------*/
 .advisory-list{display:flex;flex-direction:column;margin-top:10px;}
 .advisory-row{display:grid;grid-template-columns:220px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line);}
