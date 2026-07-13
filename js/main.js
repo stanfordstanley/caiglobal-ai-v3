@@ -114,3 +114,44 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
   }
 })();
+
+// Team profile modal (Draper-style — click photo or Learn More)
+(function () {
+  const modal = document.getElementById('team-modal');
+  if (!modal) return;
+
+  const body = modal.querySelector('.team-modal-body');
+  let lastFocus = null;
+
+  function openModal(memberId) {
+    const source = document.getElementById('bio-' + memberId);
+    if (!source || !body) return;
+
+    body.innerHTML = source.innerHTML;
+    lastFocus = document.activeElement;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    modal.querySelector('.team-modal-close')?.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    body.innerHTML = '';
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+  }
+
+  document.querySelectorAll('[data-member]').forEach((trigger) => {
+    trigger.addEventListener('click', () => openModal(trigger.dataset.member));
+  });
+
+  modal.querySelectorAll('[data-close-modal]').forEach((el) => {
+    el.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
+})();
