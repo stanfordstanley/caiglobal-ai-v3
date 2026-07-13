@@ -44,3 +44,73 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
   setBannerHeight();
   window.addEventListener('resize', setBannerHeight);
 })();
+
+// Mobile hamburger navigation
+(function () {
+  const nav = document.querySelector('header nav.wrap');
+  const desktopLinks = document.querySelector('.nav-links');
+  if (!nav || !desktopLinks) return;
+
+  const toggle = document.createElement('button');
+  toggle.className = 'nav-toggle';
+  toggle.type = 'button';
+  toggle.setAttribute('aria-label', 'Open menu');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.innerHTML = '<span></span><span></span><span></span>';
+
+  const mobileNav = document.createElement('div');
+  mobileNav.className = 'mobile-nav';
+  mobileNav.setAttribute('aria-hidden', 'true');
+
+  const panel = document.createElement('nav');
+  panel.className = 'mobile-nav-panel';
+  panel.setAttribute('aria-label', 'Mobile navigation');
+
+  desktopLinks.querySelectorAll('a').forEach((link) => {
+    const clone = link.cloneNode(true);
+    clone.addEventListener('click', closeMenu);
+    panel.appendChild(clone);
+  });
+
+  mobileNav.appendChild(panel);
+  nav.appendChild(toggle);
+  document.body.appendChild(mobileNav);
+
+  function openMenu() {
+    mobileNav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close menu');
+    mobileNav.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('nav-open');
+  }
+
+  function closeMenu() {
+    mobileNav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('nav-open');
+  }
+
+  toggle.addEventListener('click', () => {
+    if (mobileNav.classList.contains('is-open')) closeMenu();
+    else openMenu();
+  });
+
+  mobileNav.addEventListener('click', (e) => {
+    if (e.target === mobileNav) closeMenu();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
+
+  const header = document.querySelector('header');
+  if (header) {
+    document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  }
+})();
