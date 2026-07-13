@@ -156,6 +156,7 @@ h1.mission{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--on
 .page-hero{background:var(--navy);color:var(--on-navy);padding:80px 0 64px;position:relative;overflow:hidden;}
 .page-hero h1{color:var(--on-navy);font-size:clamp(30px,4.4vw,48px);position:relative;z-index:1;}
 .page-hero p{color:var(--on-navy-silver);margin-top:16px;max-width:600px;font-size:15.5px;position:relative;z-index:1;}
+.page-hero--wide h1,.page-hero--wide p{max-width:100%;}
 
 /* QUOTE BREAK (dark) --------------------------------------------------- */
 .quote-break{position:relative;padding:110px 0;text-align:center;overflow:hidden;background:var(--navy-2);color:var(--on-navy);}
@@ -264,14 +265,14 @@ section.block{padding:100px 0;border-bottom:1px solid var(--line);}
 }
 .team-groups--solo .team-group-title{display:none;}
 .team-group-intro{
-  font-size:15px;color:var(--body);line-height:1.65;max-width:720px;
+  font-size:15px;color:var(--body);line-height:1.65;max-width:100%;
 }
 .team-subhead{
   font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
   color:var(--accent);margin-top:32px;margin-bottom:8px;
 }
 .team-building-label{
-  font-size:14px;color:var(--silver);margin-bottom:24px;line-height:1.6;max-width:560px;
+  font-size:14px;color:var(--silver);margin-bottom:24px;line-height:1.6;max-width:100%;
 }
 .leadership-grid{
   display:flex;flex-wrap:wrap;gap:48px 56px;
