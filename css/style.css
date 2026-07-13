@@ -237,24 +237,33 @@ section.block{padding:100px 0;border-bottom:1px solid var(--line);}
 @media(max-width:560px){.eco-groups{grid-template-columns:1fr;}}
 
 /* Featured partnerships (ecosystem) -------------------------------------*/
-.featured-partnerships{background:var(--bg-card);}
 .partner-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:1px;
-  background:var(--line);border:1px solid var(--line);margin-top:28px;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;width:100%;margin-top:28px;
 }
-.partner-card{background:var(--bg-card);display:flex;flex-direction:column;}
+.partner-card{
+  display:grid;grid-template-columns:minmax(140px,38%) 1fr;
+  border:1px solid var(--line);background:var(--bg-card);
+  overflow:hidden;min-height:100%;
+}
 .partner-card-media{
-  min-height:220px;display:flex;align-items:center;justify-content:center;
-  padding:36px 32px;background:#0a0a0a;
+  display:flex;align-items:center;justify-content:center;
+  padding:28px 24px;background:#0a0a0a;min-height:200px;
 }
-.partner-card-media img{max-height:140px;max-width:min(100%,280px);object-fit:contain;}
+.partner-card-media img{max-height:120px;max-width:100%;width:auto;object-fit:contain;}
 .partner-card-body{
-  padding:36px 32px 40px;flex:1;display:flex;flex-direction:column;
+  padding:28px 28px 32px;display:flex;flex-direction:column;justify-content:center;
 }
-.partner-card-body h3{font-size:22px;}
-.partner-card-body p{font-size:14.5px;color:var(--silver);margin-top:14px;line-height:1.65;flex:1;}
-.partner-card-body .btn{margin-top:24px;align-self:flex-start;}
-@media(max-width:760px){.partner-grid{grid-template-columns:1fr;}}
+.partner-card-body p{font-size:14.5px;color:var(--body);line-height:1.65;flex:1;}
+.partner-card-body .btn{margin-top:20px;align-self:flex-start;}
+@media(max-width:900px){
+  .partner-grid{grid-template-columns:1fr;}
+  .partner-card{grid-template-columns:minmax(120px,34%) 1fr;}
+}
+@media(max-width:560px){
+  .partner-card{grid-template-columns:1fr;}
+  .partner-card-media{min-height:180px;padding:24px;}
+}
 
 /* TEAM ------------------------------------------------------------------*/
 .team-groups{display:flex;flex-direction:column;gap:0;}
