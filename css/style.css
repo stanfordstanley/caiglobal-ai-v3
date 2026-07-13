@@ -203,7 +203,7 @@ section.block{padding:100px 0;border-bottom:1px solid var(--line);}
 .team-member-bio .media-link{margin-top:1.65em;font-size:14px;}
 .team-member-bio .media-link a{color:var(--accent);text-decoration:none;}
 .team-member-bio .media-link a:hover{text-decoration:underline;}
-.team-member-bio .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.team-member-bio .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.65em;}
 .team-member-bio .tags span{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--silver);
   border:1px solid var(--line);padding:3px 9px;border-radius:20px;}
 .team-member-photo{display:block;height:100%;min-height:0;margin:0;overflow:hidden;}
