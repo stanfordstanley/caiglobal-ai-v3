@@ -140,6 +140,37 @@ h1.mission{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--on
 .credibility span{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--on-navy-silver);}
 .credibility strong{color:var(--on-navy);font-weight:500;}
 
+/* CAI Mission (homepage, Future Ventures–inspired editorial) */
+.cai-mission{border-bottom:1px solid var(--line);padding:100px 0;}
+.cai-mission-inner{max-width:760px;}
+.cai-mission-headline{font-size:clamp(26px,3.6vw,40px);line-height:1.2;margin-top:14px;letter-spacing:-0.02em;}
+.cai-mission-prose{margin-top:36px;}
+.cai-mission-prose p{font-size:16.5px;color:var(--body);line-height:1.7;margin-top:18px;}
+.cai-mission-prose p:first-child{margin-top:0;}
+.cai-mission-track{margin-top:32px;padding-top:32px;border-top:1px solid var(--line);}
+.cai-mission-prose a{color:var(--accent);text-decoration:none;}
+.cai-mission-prose a:hover{text-decoration:underline;}
+.cai-mission-focus,.cai-mission-network,.cai-mission-highlights,.cai-mission-reading{margin-top:40px;padding-top:32px;border-top:1px solid var(--line);}
+.cai-mission-focus h3,.cai-mission-network h3,.cai-mission-highlights h3,.cai-mission-reading h3{font-size:11px;color:var(--silver);letter-spacing:0.1em;margin-bottom:16px;}
+.cai-mission-focus ul,.cai-mission-highlights ul,.cai-mission-reading ul{list-style:none;}
+.cai-mission-focus li,.cai-mission-highlights li{font-size:15.5px;color:var(--ink);margin-top:12px;padding-left:18px;position:relative;line-height:1.55;}
+.cai-mission-focus li::before,.cai-mission-highlights li::before{content:'—';position:absolute;left:0;color:var(--accent);}
+.cai-mission-focus li:first-child,.cai-mission-highlights li:first-child{margin-top:0;}
+.cai-mission-highlights li strong{font-weight:600;color:var(--ink);}
+.cai-mission-reading li{font-size:14.5px;margin-top:14px;line-height:1.55;}
+.cai-mission-reading li:first-child{margin-top:0;}
+.cai-mission-reading a{color:var(--accent);text-decoration:none;}
+.cai-mission-reading a:hover{text-decoration:underline;}
+.cai-mission-network p{font-size:14.5px;color:var(--silver);line-height:1.65;}
+.cai-mission-cta{margin-top:40px;padding-top:32px;border-top:1px solid var(--line);}
+.cai-mission-cta p{font-size:16px;color:var(--body);line-height:1.65;}
+.cai-mission-email{display:inline-block;margin-top:14px;font-size:14px;color:var(--accent);text-decoration:none;}
+.cai-mission-email:hover{text-decoration:underline;}
+.cai-mission-follow{margin-top:32px;padding-top:28px;border-top:1px solid var(--line);}
+.cai-mission-follow p{font-size:14px;color:var(--silver);line-height:1.7;}
+.cai-mission-follow a{color:var(--accent);text-decoration:none;}
+.cai-mission-follow a:hover{text-decoration:underline;}
+
 /* Small page header (non-home pages) ----------------------------------*/
 .page-hero{background:var(--navy);color:var(--on-navy);padding:80px 0 64px;position:relative;overflow:hidden;}
 .page-hero h1{color:var(--on-navy);font-size:clamp(30px,4.4vw,48px);position:relative;z-index:1;}
