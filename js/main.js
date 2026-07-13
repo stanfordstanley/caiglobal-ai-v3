@@ -27,7 +27,7 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
   banner.className = 'research-banner wrap';
   banner.innerHTML = `
     <div class="research-banner-inner">
-      <span class="research-banner-label">HARVARD AI · WHITE PAPER</span>
+      <span class="research-banner-label">CAI x HARVARD AI Governance · WHITE PAPER</span>
       <span class="research-banner-sep">·</span>
       <a href="/research/CAI-x-HFTC-Policy-White-Paper-2026-No-1-EN.pdf" class="research-banner-link" target="_blank" rel="noopener">English PDF ↓</a>
       <span class="research-banner-sep">·</span>
