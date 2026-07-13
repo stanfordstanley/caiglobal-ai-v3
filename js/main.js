@@ -158,7 +158,7 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
 // Team filter tabs (Leadership / Advisory / Fellows)
 (function () {
-  const nav = document.querySelector('.team-nav');
+  const nav = document.querySelector('.team-filter-nav');
   const groupsWrap = document.querySelector('.team-groups');
   if (!nav || !groupsWrap) return;
 

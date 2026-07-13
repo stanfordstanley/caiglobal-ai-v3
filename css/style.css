@@ -237,24 +237,6 @@ section.block{padding:100px 0;border-bottom:1px solid var(--line);}
 @media(max-width:560px){.eco-groups{grid-template-columns:1fr;}}
 
 /* TEAM ------------------------------------------------------------------*/
-.team-nav{
-  display:flex;flex-wrap:wrap;gap:10px 24px;
-  margin-bottom:56px;
-}
-.team-nav-btn{
-  padding:0;border:none;background:none;cursor:pointer;
-  font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:500;
-  letter-spacing:0.03em;text-transform:uppercase;
-  color:var(--silver);transition:color .2s;
-  position:relative;
-}
-.team-nav-btn::after{
-  content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;
-  background:var(--accent);transform:scaleX(0);transition:transform .2s;
-}
-.team-nav-btn:hover{color:var(--ink);}
-.team-nav-btn.is-active{color:var(--ink);}
-.team-nav-btn.is-active::after{transform:scaleX(1);}
 .team-groups{display:flex;flex-direction:column;gap:0;}
 .team-group{padding-bottom:72px;}
 .team-group[hidden]{display:none;}
@@ -362,8 +344,6 @@ section.block{padding:100px 0;border-bottom:1px solid var(--line);}
 .team-modal-bio .media-link a:hover{text-decoration:underline;}
 
 @media(max-width:760px){
-  .team-nav{gap:8px 18px;}
-  .team-nav-btn{font-size:12px;}
   .team-group{padding-bottom:56px;}
   .team-groups:not(.team-groups--solo) .team-group + .team-group{padding-top:56px;}
   .advisor-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px 10px;}
@@ -396,12 +376,18 @@ section.block{padding:100px 0;border-bottom:1px solid var(--line);}
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
-.content-nav a{
+.content-nav a,
+.content-nav button{
   font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;
   color:var(--silver);padding:8px 16px;border:1px solid var(--line);
-  border-radius:20px;transition:all .2s;
+  border-radius:20px;transition:all .2s;background:none;cursor:pointer;
 }
-.content-nav a:hover,.content-nav a:focus{color:var(--accent);border-color:var(--accent);}
+.content-nav a:hover,.content-nav a:focus,
+.content-nav button:hover,.content-nav button:focus{color:var(--accent);border-color:var(--accent);}
+.content-nav a.is-active,
+.content-nav button.is-active{color:var(--accent);border-color:var(--accent);}
+.team-filter-nav{margin-bottom:0;}
+.team-page{padding-top:56px;}
 
 .research-banner{
   padding:5px 32px;
