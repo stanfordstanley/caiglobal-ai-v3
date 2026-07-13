@@ -44,45 +44,96 @@
 <section class="block team-page">
   <div class="wrap">
 
-    <div class="team-section reveal">
-      <div class="kicker on-light">LEADERSHIP</div>
-      <div class="leadership-grid">
-        <article class="leader-card">
-          <button type="button" class="leader-photo-btn" data-member="stanley" aria-label="View Stanley X.L. Diao profile">
-            <img src="/img/team/stanley-diao.png" alt="Stanley X.L. Diao" width="400" height="400" loading="lazy">
-          </button>
-          <h3>Stanley X.L. Diao</h3>
-          <p class="leader-title">Co-Founder &amp; Executive Director, CAI Global</p>
-          <button type="button" class="leader-more" data-member="stanley">Learn More</button>
-        </article>
+    <nav class="team-nav" aria-label="Team sections">
+      <button type="button" class="team-nav-btn is-active" data-team-filter="all">All</button>
+      <button type="button" class="team-nav-btn" data-team-filter="leadership">Leadership</button>
+      <button type="button" class="team-nav-btn" data-team-filter="advisory">Advisory Council</button>
+      <button type="button" class="team-nav-btn" data-team-filter="fellows">Research Fellows</button>
+    </nav>
 
-        <article class="leader-card">
-          <button type="button" class="leader-photo-btn leader-photo-btn--placeholder" data-member="jie" aria-label="View Jie Shen profile">
-            <span class="leader-initials">JS</span>
-          </button>
-          <h3>Jie Shen</h3>
-          <p class="leader-title">Co-Founder, CAI Bio Venture Studio</p>
-          <button type="button" class="leader-more" data-member="jie">Learn More</button>
-        </article>
-      </div>
+    <div class="team-groups">
+
+      <section class="team-group reveal" data-team-group="leadership">
+        <h2 class="team-group-title">Leadership</h2>
+        <div class="leadership-grid">
+          <article class="leader-card">
+            <button type="button" class="leader-photo-btn" data-member="stanley" aria-label="View Stanley X.L. Diao profile">
+              <img src="/img/team/stanley-diao.png" alt="Stanley X.L. Diao" width="400" height="400" loading="lazy">
+            </button>
+            <h3>Stanley X.L. Diao</h3>
+            <p class="leader-title">Co-Founder &amp; Executive Director, CAI Global</p>
+            <button type="button" class="leader-more" data-member="stanley">Learn More</button>
+          </article>
+
+          <article class="leader-card">
+            <button type="button" class="leader-photo-btn leader-photo-btn--placeholder" data-member="jie" aria-label="View Jie Shen profile">
+              <span class="leader-initials">JS</span>
+            </button>
+            <h3>Jie Shen</h3>
+            <p class="leader-title">Co-Founder, CAI Bio Venture Studio</p>
+            <button type="button" class="leader-more" data-member="jie">Learn More</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="team-group reveal" data-team-group="advisory">
+        <h2 class="team-group-title">Advisory Council</h2>
+        <p class="team-group-intro">CAI's Advisory Council brings together leaders from AI, academia, capital markets, healthcare, and emerging technologies to guide strategic initiatives and global partnerships.</p>
+        <h3 class="team-subhead mono">Founding Advisors</h3>
+        <p class="team-building-label mono">Coming Soon</p>
+        <div class="advisor-grid">
+          <article class="advisor-placeholder">
+            <div class="advisor-placeholder-photo" aria-hidden="true"></div>
+            <p class="advisor-domain mono">AI Research</p>
+          </article>
+          <article class="advisor-placeholder">
+            <div class="advisor-placeholder-photo" aria-hidden="true"></div>
+            <p class="advisor-domain mono">Venture Capital</p>
+          </article>
+          <article class="advisor-placeholder">
+            <div class="advisor-placeholder-photo" aria-hidden="true"></div>
+            <p class="advisor-domain mono">Policy &amp; Governance</p>
+          </article>
+          <article class="advisor-placeholder">
+            <div class="advisor-placeholder-photo" aria-hidden="true"></div>
+            <p class="advisor-domain mono">Healthcare Innovation</p>
+          </article>
+          <article class="advisor-placeholder">
+            <div class="advisor-placeholder-photo" aria-hidden="true"></div>
+            <p class="advisor-domain mono">Asia-Pacific Ecosystems</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="team-group reveal" data-team-group="fellows">
+        <h2 class="team-group-title">Research Fellows</h2>
+        <p class="team-group-intro">CAI Research Fellows explore emerging questions at the intersection of artificial intelligence, technology governance, and global innovation ecosystems.</p>
+        <h3 class="team-subhead mono">Research Themes</h3>
+        <div class="advisor-grid">
+          <article class="advisor-placeholder">
+            <div class="advisor-placeholder-photo" aria-hidden="true"></div>
+            <p class="advisor-domain mono">AI Governance</p>
+          </article>
+          <article class="advisor-placeholder">
+            <div class="advisor-placeholder-photo" aria-hidden="true"></div>
+            <p class="advisor-domain mono">Frontier AI Policy</p>
+          </article>
+          <article class="advisor-placeholder">
+            <div class="advisor-placeholder-photo" aria-hidden="true"></div>
+            <p class="advisor-domain mono">AI × Healthcare</p>
+          </article>
+          <article class="advisor-placeholder">
+            <div class="advisor-placeholder-photo" aria-hidden="true"></div>
+            <p class="advisor-domain mono">Digital Infrastructure</p>
+          </article>
+          <article class="advisor-placeholder">
+            <div class="advisor-placeholder-photo" aria-hidden="true"></div>
+            <p class="advisor-domain mono">Cross-border Innovation</p>
+          </article>
+        </div>
+      </section>
+
     </div>
-
-    <div class="team-section reveal">
-      <div class="kicker on-light">ADVISORY COUNCIL</div>
-      <p class="team-coming-soon">Coming Soon</p>
-    </div>
-
-    <div class="team-section reveal">
-      <div class="kicker on-light">RESEARCH FELLOWS</div>
-      <p class="team-coming-soon">Coming Soon</p>
-    </div>
-
-    <div class="team-section reveal">
-      <div class="kicker on-light">GLOBAL INNOVATION NETWORK</div>
-      <p class="team-network mono">Canada <span>|</span> US <span>|</span> Asia</p>
-    </div>
-
-    <p class="team-footnote">CAI works with a wider network of fractional scientific advisors, capital partners, and institutional collaborators across Canada, the U.S., and Asia — introduced directly as engagements require.</p>
   </div>
 </section>
 

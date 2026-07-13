@@ -155,3 +155,32 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
 })();
+
+// Team filter tabs (All / Leadership / Advisory / Fellows — Draper-style)
+(function () {
+  const nav = document.querySelector('.team-nav');
+  const groupsWrap = document.querySelector('.team-groups');
+  if (!nav || !groupsWrap) return;
+
+  const buttons = nav.querySelectorAll('[data-team-filter]');
+  const groups = groupsWrap.querySelectorAll('[data-team-group]');
+
+  function activate(filter) {
+    buttons.forEach((btn) => {
+      btn.classList.toggle('is-active', btn.dataset.teamFilter === filter);
+    });
+
+    const solo = filter !== 'all';
+    groupsWrap.classList.toggle('team-groups--solo', solo);
+    groupsWrap.dataset.active = filter;
+
+    groups.forEach((group) => {
+      const show = filter === 'all' || group.dataset.teamGroup === filter;
+      group.hidden = !show;
+    });
+  }
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => activate(btn.dataset.teamFilter));
+  });
+})();
