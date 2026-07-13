@@ -29,10 +29,10 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     <div class="research-banner-inner">
       <span class="research-banner-label">HARVARD AI · WHITE PAPER</span>
       <span class="research-banner-sep">·</span>
-      <span class="research-banner-title">CAI × HFTC Policy White Paper 2026 No.1 — Toronto–Boston Roundtable on AI Security &amp; Governance</span>
-      <span class="research-banner-sep">·</span>
       <a href="/research/CAI-x-HFTC-Policy-White-Paper-2026-No-1-EN.pdf" class="research-banner-link" target="_blank" rel="noopener">English PDF ↓</a>
+      <span class="research-banner-sep">·</span>
       <a href="/research/CAI-x-HFTC-Policy-White-Paper-2026-No-1-CN.pdf" class="research-banner-link" target="_blank" rel="noopener">中文 PDF ↓</a>
+      <span class="research-banner-sep">·</span>
       <a href="/content/#research" class="research-banner-link research-banner-more">Details →</a>
     </div>`;
 
