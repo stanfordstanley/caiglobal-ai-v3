@@ -271,8 +271,7 @@ section.block{padding:100px 0;border-bottom:1px solid var(--line);}
   color:var(--accent);margin-top:32px;margin-bottom:8px;
 }
 .team-building-label{
-  font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;
-  color:var(--silver);margin-bottom:24px;
+  font-size:14px;color:var(--silver);margin-bottom:24px;line-height:1.6;max-width:560px;
 }
 .leadership-grid{
   display:flex;flex-wrap:wrap;gap:48px 56px;

@@ -156,7 +156,7 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
   });
 })();
 
-// Team filter tabs (All / Leadership / Advisory / Fellows — Draper-style)
+// Team filter tabs (Leadership / Advisory / Fellows)
 (function () {
   const nav = document.querySelector('.team-nav');
   const groupsWrap = document.querySelector('.team-groups');
@@ -170,13 +170,10 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
       btn.classList.toggle('is-active', btn.dataset.teamFilter === filter);
     });
 
-    const solo = filter !== 'all';
-    groupsWrap.classList.toggle('team-groups--solo', solo);
     groupsWrap.dataset.active = filter;
 
     groups.forEach((group) => {
-      const show = filter === 'all' || group.dataset.teamGroup === filter;
-      group.hidden = !show;
+      group.hidden = group.dataset.teamGroup !== filter;
     });
   }
 
