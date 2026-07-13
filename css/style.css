@@ -142,7 +142,7 @@ h1.mission{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--on
 
 /* CAI Mission (homepage, Future Ventures–inspired editorial prose) */
 .cai-mission{border-bottom:1px solid var(--line);padding:100px 0;}
-.cai-mission-inner{max-width:720px;}
+.cai-mission-inner{max-width:100%;}
 .cai-mission-headline{font-size:clamp(28px,4vw,44px);line-height:1.15;margin-top:0;letter-spacing:-0.02em;font-weight:600;}
 .cai-mission-prose{margin-top:32px;}
 .cai-mission-prose p{font-size:16.5px;color:var(--body);line-height:1.72;margin-top:20px;}
