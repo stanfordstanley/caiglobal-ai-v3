@@ -197,20 +197,22 @@ section.block{padding:100px 0;border-bottom:1px solid var(--line);}
 .team-member-head h2{font-size:clamp(28px,4vw,40px);line-height:1.1;}
 .team-member-head h3{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:var(--silver);
   letter-spacing:0.08em;text-transform:uppercase;margin-top:10px;}
-.team-member-body{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:40px;margin-top:32px;align-items:start;}
-.team-member-bio p{font-size:15px;color:var(--body);margin-top:16px;line-height:1.65;}
+.team-member-body{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:40px;margin-top:32px;align-items:stretch;}
+.team-member-bio p{font-size:15px;color:var(--body);margin-top:1.65em;line-height:1.65;}
 .team-member-bio p:first-child{margin-top:0;}
-.team-member-bio .headshot-link{margin-top:20px;font-size:14px;}
-.team-member-bio .headshot-link a{color:var(--accent);text-decoration:none;}
-.team-member-bio .headshot-link a:hover{text-decoration:underline;}
+.team-member-bio .media-link{margin-top:1.65em;font-size:14px;}
+.team-member-bio .media-link a{color:var(--accent);text-decoration:none;}
+.team-member-bio .media-link a:hover{text-decoration:underline;}
 .team-member-bio .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .team-member-bio .tags span{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--silver);
   border:1px solid var(--line);padding:3px 9px;border-radius:20px;}
-.team-member-photo img{width:100%;height:auto;display:block;object-fit:cover;object-position:center top;}
+.team-member-photo{display:block;height:100%;min-height:0;margin:0;overflow:hidden;}
+.team-member-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center top;}
 .team-member + .team-member{margin-top:80px;padding-top:80px;border-top:1px solid var(--line);}
 @media(max-width:900px){
-  .team-member-body{grid-template-columns:1fr;gap:28px;}
-  .team-member-photo{max-width:320px;}
+  .team-member-body{grid-template-columns:1fr;gap:28px;align-items:start;}
+  .team-member-photo{max-width:280px;height:auto;}
+  .team-member-photo img{height:auto;aspect-ratio:1;}
 }
 @media(max-width:760px){.team-grid{grid-template-columns:1fr;}}
 
