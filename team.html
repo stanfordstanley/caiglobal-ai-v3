@@ -13,7 +13,22 @@
 </head>
 <body>
 
+<div class="research-banner">
+  <div class="wrap">
+    <div class="research-banner-inner">
+      <span class="research-banner-label">CAI x HARVARD AI Governance · WHITE PAPER</span>
+      <span class="research-banner-sep">·</span>
+      <a href="/research/CAI-x-HFTC-Policy-White-Paper-2026-No-1-EN.pdf" class="research-banner-link" target="_blank" rel="noopener">English PDF ↓</a>
+      <span class="research-banner-sep">·</span>
+      <a href="/research/CAI-x-HFTC-Policy-White-Paper-2026-No-1-CN.pdf" class="research-banner-link" target="_blank" rel="noopener">中文 PDF ↓</a>
+      <span class="research-banner-sep">·</span>
+      <a href="/content/#research" class="research-banner-link research-banner-more">Details →</a>
+    </div>
+  </div>
+</div>
+
 <header>
+  <a class="skip-link" href="#main">Skip to content</a>
   <nav class="wrap">
     <a href="/" class="logo">
       <img src="/img/logo.png" alt="CAI" class="logo-img" height="44">
@@ -33,6 +48,8 @@
   </nav>
 </header>
 
+<main id="main">
+
 <section class="page-hero">
   <div class="wrap">
     <div class="kicker">TEAM</div>
@@ -42,9 +59,9 @@
 </section>
 
 <nav class="content-nav wrap team-filter-nav" aria-label="Team sections">
-  <button type="button" class="is-active" data-team-filter="leadership">Leadership</button>
-  <button type="button" data-team-filter="advisory">Advisory Council</button>
-  <button type="button" data-team-filter="fellows">Research Fellows</button>
+  <button type="button" class="is-active" data-team-filter="leadership" aria-pressed="true">Leadership</button>
+  <button type="button" data-team-filter="advisory" aria-pressed="false">Advisory Council</button>
+  <button type="button" data-team-filter="fellows" aria-pressed="false">Research Fellows</button>
 </nav>
 
 <section class="block team-page">
@@ -136,6 +153,17 @@
   </div>
 </section>
 
+<section class="cta-section">
+  <div class="wrap">
+    <h2>Want to build with us?</h2>
+    <div class="hero-cta">
+      <a href="/connect.html" class="btn btn-solid">Connect With the Team</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
 <!-- Hidden bio content for modal -->
 <div class="leader-bio-store" hidden>
   <div id="bio-stanley">
@@ -179,31 +207,22 @@
 </div>
 
 <div class="team-modal" id="team-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="team-modal-title">
-  <div class="team-modal-backdrop" data-close-modal></div>
+  <button type="button" class="team-modal-backdrop" aria-label="Close profile" data-close-modal></button>
   <div class="team-modal-panel">
     <button type="button" class="team-modal-close" aria-label="Close profile" data-close-modal>Close</button>
     <div class="team-modal-body"></div>
   </div>
 </div>
 
-<section class="cta-section">
-  <div class="wrap">
-    <h2>Want to build with us?</h2>
-    <div class="hero-cta">
-      <a href="/connect.html" class="btn btn-solid">Connect With the Team</a>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="wrap footer-grid">
-    <div class="logo">
+    <a href="/" class="logo">
       <img src="/img/logo-dark.png" alt="CAI" class="logo-img" height="44">
       <span class="logo-text">
         <span class="sub">CANADA–ASIA COUNCIL</span>
         <span class="sub sub-line2">FOR AI &amp; DIGITAL INNOVATION</span>
       </span>
-    </div>
+    </a>
     <div class="footer-cols">
       <div class="footer-col">
         <h4>EXPLORE</h4>
