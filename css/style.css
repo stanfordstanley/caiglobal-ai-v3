@@ -256,6 +256,8 @@ section.block.block--card{background:var(--bg-card);}
   padding:28px 28px 32px;display:flex;flex-direction:column;justify-content:center;
 }
 .partner-card-body p{font-size:14.5px;color:var(--body);line-height:1.65;flex:1;}
+.partner-card-body p a{color:var(--accent);font-weight:500;}
+.partner-card-body p a:hover{text-decoration:underline;}
 .partner-card-body .btn{margin-top:20px;align-self:flex-start;}
 @media(max-width:900px){
   .partner-grid{grid-template-columns:1fr;}
