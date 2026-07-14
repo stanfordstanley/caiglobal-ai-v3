@@ -240,32 +240,41 @@ section.block.block--card{background:var(--bg-card);}
 /* Featured partnerships (ecosystem) -------------------------------------*/
 .partner-grid{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:24px;width:100%;margin-top:28px;
+  gap:28px;width:100%;margin-top:28px;
 }
 .partner-card{
-  display:grid;grid-template-columns:minmax(140px,38%) 1fr;
+  display:flex;flex-direction:column;
   border:1px solid var(--line);background:var(--bg-card);
   overflow:hidden;min-height:100%;
 }
 .partner-card-media{
   display:flex;align-items:center;justify-content:center;
-  padding:28px 24px;background:#0a0a0a;min-height:200px;
+  padding:36px 32px;background:#fff;border-bottom:1px solid var(--line);
+  min-height:200px;
 }
-.partner-card-media img{max-height:120px;max-width:100%;width:auto;object-fit:contain;}
+.partner-card-media img{max-height:160px;max-width:100%;width:auto;object-fit:contain;}
 .partner-card-body{
-  padding:28px 28px 32px;display:flex;flex-direction:column;justify-content:center;
+  padding:28px 28px 32px;display:flex;flex-direction:column;flex:1;
 }
-.partner-card-body p{font-size:14.5px;color:var(--body);line-height:1.65;flex:1;}
-.partner-card-body p a{color:var(--accent);font-weight:500;}
-.partner-card-body p a:hover{text-decoration:underline;}
-.partner-card-body .btn{margin-top:20px;align-self:flex-start;}
+.partner-card-name{
+  font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;
+  margin:0 0 12px;line-height:1.25;
+}
+.partner-card-name a{color:var(--ink);}
+.partner-card-name a:hover{color:var(--accent);}
+.partner-card-body p{font-size:14.5px;color:var(--silver);line-height:1.65;flex:1;margin:0;}
+.partner-card-link{
+  display:inline-block;margin-top:20px;font-size:13px;font-weight:600;
+  color:var(--accent);
+}
+.partner-card-link:hover{text-decoration:underline;}
 @media(max-width:900px){
   .partner-grid{grid-template-columns:1fr;}
-  .partner-card{grid-template-columns:minmax(120px,34%) 1fr;}
 }
 @media(max-width:560px){
-  .partner-card{grid-template-columns:1fr;}
-  .partner-card-media{min-height:180px;padding:24px;}
+  .partner-card-media{min-height:160px;padding:28px 24px;}
+  .partner-card-media img{max-height:120px;}
+  .partner-card-body{padding:24px 22px 28px;}
 }
 
 /* TEAM ------------------------------------------------------------------*/
