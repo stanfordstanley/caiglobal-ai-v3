@@ -8,41 +8,45 @@ const io = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
+// Layout CSS variables (header, research banner)
 (function () {
   const header = document.querySelector('header');
-  if (header) {
-    const setHeaderHeight = () => {
+  const banner = document.querySelector('.research-banner');
+
+  function syncLayoutVars() {
+    if (header) {
       document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
-    };
-    setHeaderHeight();
-    window.addEventListener('resize', setHeaderHeight);
+    }
+    if (banner) {
+      document.documentElement.style.setProperty('--research-banner-h', banner.offsetHeight + 'px');
+    }
   }
+
+  syncLayoutVars();
+  window.addEventListener('resize', syncLayoutVars);
 })();
 
-// Harvard AI white paper banner — top of page, above header
+// Harvard AI white paper banner — full-bleed bar above header
 (function () {
   if (document.querySelector('.research-banner')) return;
 
   const banner = document.createElement('div');
-  banner.className = 'research-banner wrap';
+  banner.className = 'research-banner';
   banner.innerHTML = `
-    <div class="research-banner-inner">
-      <span class="research-banner-label">CAI x HARVARD AI Governance · WHITE PAPER</span>
-      <span class="research-banner-sep">·</span>
-      <a href="/research/CAI-x-HFTC-Policy-White-Paper-2026-No-1-EN.pdf" class="research-banner-link" target="_blank" rel="noopener">English PDF ↓</a>
-      <span class="research-banner-sep">·</span>
-      <a href="/research/CAI-x-HFTC-Policy-White-Paper-2026-No-1-CN.pdf" class="research-banner-link" target="_blank" rel="noopener">中文 PDF ↓</a>
-      <span class="research-banner-sep">·</span>
-      <a href="/content/#research" class="research-banner-link research-banner-more">Details →</a>
+    <div class="wrap">
+      <div class="research-banner-inner">
+        <span class="research-banner-label">CAI x HARVARD AI Governance · WHITE PAPER</span>
+        <span class="research-banner-sep">·</span>
+        <a href="/research/CAI-x-HFTC-Policy-White-Paper-2026-No-1-EN.pdf" class="research-banner-link" target="_blank" rel="noopener">English PDF ↓</a>
+        <span class="research-banner-sep">·</span>
+        <a href="/research/CAI-x-HFTC-Policy-White-Paper-2026-No-1-CN.pdf" class="research-banner-link" target="_blank" rel="noopener">中文 PDF ↓</a>
+        <span class="research-banner-sep">·</span>
+        <a href="/content/#research" class="research-banner-link research-banner-more">Details →</a>
+      </div>
     </div>`;
 
   document.body.insertAdjacentElement('afterbegin', banner);
-
-  const setBannerHeight = () => {
-    document.documentElement.style.setProperty('--research-banner-h', banner.offsetHeight + 'px');
-  };
-  setBannerHeight();
-  window.addEventListener('resize', setBannerHeight);
+  window.dispatchEvent(new Event('resize'));
 })();
 
 // Mobile hamburger navigation
@@ -101,26 +105,61 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     if (e.target === mobileNav) closeMenu();
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
-  });
-
   window.addEventListener('resize', () => {
     if (window.innerWidth > 900) closeMenu();
   });
 
-  const header = document.querySelector('header');
-  if (header) {
-    document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
-  }
+  window.__caiCloseMobileNav = closeMenu;
 })();
 
-// Team profile modal (Draper-style — click photo or Learn More)
+// Section subnav active state (Content, Studio)
+(function () {
+  const nav = document.querySelector('.content-nav:not(.team-filter-nav)');
+  if (!nav) return;
+
+  const links = [...nav.querySelectorAll('a[href^="#"]')];
+  const sections = links
+    .map((link) => {
+      const id = link.getAttribute('href').slice(1);
+      const section = document.getElementById(id);
+      return section ? { id, section, link } : null;
+    })
+    .filter(Boolean);
+
+  if (!sections.length) return;
+
+  function setActive(id) {
+    links.forEach((link) => {
+      link.classList.toggle('is-active', link.getAttribute('href') === '#' + id);
+    });
+  }
+
+  const hashId = location.hash.slice(1);
+  if (hashId && sections.some((s) => s.id === hashId)) setActive(hashId);
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: '-40% 0px -45% 0px', threshold: 0 }
+  );
+
+  sections.forEach(({ section }) => observer.observe(section));
+  window.addEventListener('hashchange', () => {
+    const id = location.hash.slice(1);
+    if (sections.some((s) => s.id === id)) setActive(id);
+  });
+})();
+
+// Team profile modal
 (function () {
   const modal = document.getElementById('team-modal');
   if (!modal) return;
 
   const body = modal.querySelector('.team-modal-body');
+  const panel = modal.querySelector('.team-modal-panel');
   let lastFocus = null;
 
   function openModal(memberId) {
@@ -128,6 +167,8 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     if (!source || !body) return;
 
     body.innerHTML = source.innerHTML;
+    body.querySelector('.team-modal-head h2')?.setAttribute('id', 'team-modal-title');
+
     lastFocus = document.activeElement;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
@@ -151,9 +192,22 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     el.addEventListener('click', closeModal);
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  panel?.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab' || !modal.classList.contains('is-open')) return;
+    const focusable = panel.querySelectorAll('button, a[href]');
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   });
+
+  window.__caiCloseTeamModal = closeModal;
 })();
 
 // Team filter tabs (Leadership / Advisory / Fellows)
@@ -169,9 +223,7 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     buttons.forEach((btn) => {
       btn.classList.toggle('is-active', btn.dataset.teamFilter === filter);
     });
-
     groupsWrap.dataset.active = filter;
-
     groups.forEach((group) => {
       group.hidden = group.dataset.teamGroup !== filter;
     });
@@ -181,3 +233,10 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     btn.addEventListener('click', () => activate(btn.dataset.teamFilter));
   });
 })();
+
+// Global Escape — close overlays
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  window.__caiCloseTeamModal?.();
+  window.__caiCloseMobileNav?.();
+});
