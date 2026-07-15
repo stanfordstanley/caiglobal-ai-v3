@@ -206,6 +206,12 @@ function setOverlayInert(active) {
   const panel = modal.querySelector('.team-modal-panel');
   let lastFocus = null;
 
+  function setLeaderPhotoActive(memberId) {
+    document.querySelectorAll('.leader-photo-btn[data-member]').forEach((btn) => {
+      btn.classList.toggle('is-active', Boolean(memberId && btn.dataset.member === memberId));
+    });
+  }
+
   function openModal(memberId) {
     const source = document.getElementById('bio-' + memberId);
     if (!source || !body) return;
@@ -213,6 +219,7 @@ function setOverlayInert(active) {
     body.innerHTML = source.innerHTML;
     body.querySelector('.team-modal-head h2')?.setAttribute('id', 'team-modal-title');
 
+    setLeaderPhotoActive(memberId);
     lastFocus = document.activeElement;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
@@ -226,6 +233,7 @@ function setOverlayInert(active) {
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
     body.innerHTML = '';
+    setLeaderPhotoActive(null);
     if (!document.querySelector('.mobile-nav.is-open')) {
       setOverlayInert(false);
     }
