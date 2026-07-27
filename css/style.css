@@ -257,11 +257,13 @@ section.block.block--card{background:var(--bg-card);}
   font-size:clamp(22px,3vw,28px);font-weight:600;margin-bottom:12px;
 }
 .eco-talent-lead{
-  font-size:15.5px;line-height:1.65;color:var(--silver);max-width:720px;margin-bottom:28px;
+  font-size:15.5px;line-height:1.65;color:var(--silver);max-width:100%;margin-bottom:28px;
 }
 .eco-talent-nodes{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px;
 }
+.eco-talent-nodes--preview{grid-template-columns:repeat(3,minmax(0,1fr));}
+.eco-talent-explore{margin-top:24px;}
 .eco-talent-node{
   display:flex;flex-direction:column;justify-content:center;gap:6px;
   min-height:72px;padding:14px 16px;
@@ -284,10 +286,12 @@ a.eco-talent-node:hover{
   margin-top:32px;padding-top:28px;border-top:1px solid var(--line);
 }
 .eco-talent-bridge p{
-  font-size:14.5px;line-height:1.65;color:var(--silver);margin:0;max-width:720px;
+  font-size:14.5px;line-height:1.65;color:var(--silver);margin:0;max-width:100%;
 }
 .eco-talent-bridge .partner-card-link{display:inline-block;margin-top:20px;}
-@media(max-width:860px){.eco-talent-nodes{grid-template-columns:1fr;}}
+@media(max-width:960px){.eco-talent-nodes--preview{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:860px){.eco-talent-nodes:not(.eco-talent-nodes--preview){grid-template-columns:1fr;}}
+@media(max-width:560px){.eco-talent-nodes--preview{grid-template-columns:1fr;}}
 
 /* Future Leaders program page -------------------------------------------*/
 .fli-powered{
