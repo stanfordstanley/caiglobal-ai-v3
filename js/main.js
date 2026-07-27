@@ -130,6 +130,7 @@ function setOverlayInert(active) {
     }
     if (pathname.includes('/content')) return 'content';
     if (pathname.includes('/ecosystem')) return 'ecosystem';
+    if (pathname.includes('/studio')) return 'studio';
     const file = pathname.split('/').pop() || '';
     return file.replace('.html', '') || 'home';
   }
@@ -138,6 +139,7 @@ function setOverlayInert(active) {
     if (href === '/' || href === '/index.html') return 'home';
     if (href.includes('/content')) return 'content';
     if (href.includes('/ecosystem')) return 'ecosystem';
+    if (href.includes('/studio')) return 'studio';
     return href.split('/').pop().replace('.html', '');
   }
 
