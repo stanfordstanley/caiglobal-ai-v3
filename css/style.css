@@ -537,6 +537,12 @@ a.eco-talent-node:hover{
 .team-modal-bio p{font-size:15px;color:var(--body);margin-top:1.65em;line-height:1.65;}
 .team-modal-bio p:first-child{margin-top:0;}
 .team-modal-lead{font-size:15.5px;color:var(--body);}
+.team-modal-note{font-size:14px;color:var(--silver);line-height:1.6;margin-top:18px;}
+.team-modal-bio .tags{margin-top:1.65em;}
+.team-modal-bio .team-modal-tags{margin-bottom:0;}
+.team-modal-bio .media-link{margin-top:1em;}
+.team-modal-bio .media-link:first-of-type{margin-top:1.65em;}
+.team-modal-bio .media-link + .media-link{margin-top:0.65em;}
 .team-modal-section{margin-top:1.85em;padding-top:1.65em;border-top:1px solid var(--line);}
 .team-modal-label{
   font-size:11px;color:var(--accent);letter-spacing:0.08em;margin-bottom:14px;
