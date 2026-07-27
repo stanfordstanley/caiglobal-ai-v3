@@ -731,6 +731,8 @@ footer{padding:50px 0 40px;background:var(--navy-2);color:var(--on-navy);}
 .footer-brand-line{font-size:13px;color:var(--on-navy-silver);line-height:1.65;margin:0 0 8px;}
 .footer-brand-line:first-of-type{margin-top:18px;}
 .footer-brand-line:last-of-type{margin-bottom:0;}
+.footer-brand-hubs{font-size:11px;letter-spacing:0.01em;white-space:nowrap;}
+@media(max-width:400px){.footer-brand-hubs{white-space:normal;font-size:10.5px;}}
 .footer-brand-line a{color:inherit;text-decoration:none;}
 .footer-brand-line a:hover{color:var(--on-navy);text-decoration:underline;}
 .footer-cols{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:32px 40px;}
@@ -738,6 +740,11 @@ footer{padding:50px 0 40px;background:var(--navy-2);color:var(--on-navy);}
 @media(max-width:520px){.footer-cols{grid-template-columns:1fr;}}
 .footer-col h4{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--on-navy-silver);letter-spacing:0.08em;margin-bottom:14px;}
 .footer-col-sub{margin-top:22px;}
+.footer-partnership{margin-top:22px;font-size:10px;letter-spacing:0.05em;color:var(--on-navy-silver);line-height:1.5;white-space:nowrap;}
+.footer-partnership span{text-transform:uppercase;}
+.footer-partnership a{color:inherit;text-decoration:none;font-size:11px;letter-spacing:0;}
+.footer-partnership a:hover{color:var(--on-navy);text-decoration:underline;}
+@media(max-width:520px){.footer-partnership{white-space:normal;font-size:9.5px;}.footer-partnership a{font-size:10px;}}
 .footer-col a{display:block;font-size:14px;color:var(--on-navy-silver);margin-bottom:9px;text-decoration:none;}
 .footer-col a:hover{color:var(--on-navy);}
 .footer-social{display:flex;align-items:center;gap:10px;margin-top:6px;}
@@ -750,7 +757,6 @@ footer{padding:50px 0 40px;background:var(--navy-2);color:var(--on-navy);}
 }
 .footer-social a:hover{border-color:var(--on-navy);color:var(--on-navy);background:rgba(255,255,255,0.06);}
 .footer-social svg{width:15px;height:15px;fill:currentColor;}
-.footer-email{font-family:'IBM Plex Mono',monospace;font-size:13px;}
 .footer-bottom{margin-top:56px;padding-top:22px;border-top:1px solid var(--on-navy-line);
   display:flex;justify-content:space-between;align-items:center;color:var(--on-navy-silver);font-size:12px;flex-wrap:wrap;gap:10px;}
 .footer-legal{display:flex;gap:20px;}
