@@ -301,6 +301,10 @@ a.eco-talent-node:hover{
 .fli-inquiry-note{
   margin-top:18px;font-size:11px;color:var(--on-navy-silver);letter-spacing:0.06em;
 }
+.fli-partner-group{margin-top:32px;}
+.fli-partner-group:first-of-type{margin-top:24px;}
+.fli-partner-group .mono{font-size:11px;color:var(--accent);letter-spacing:0.08em;margin-bottom:14px;}
+.fli-partner-group .eco-talent-nodes{margin-top:0;}
 .fli-track{margin-top:40px;padding-top:40px;border-top:1px solid var(--line);}
 .fli-track:first-of-type{margin-top:10px;padding-top:0;border-top:none;}
 .fli-track-head .mono{font-size:11px;color:var(--accent);letter-spacing:0.08em;}
