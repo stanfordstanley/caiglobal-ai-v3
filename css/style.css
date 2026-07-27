@@ -728,7 +728,8 @@ footer{padding:50px 0 40px;background:var(--navy-2);color:var(--on-navy);}
 @media(max-width:900px){.footer-grid{grid-template-columns:1fr;gap:36px;}}
 .footer-brand{max-width:320px;}
 .footer-brand-logo{margin-bottom:0;}
-.footer-brand-desc{font-size:14px;color:var(--on-navy-silver);line-height:1.65;margin:18px 0 14px;}
+.footer-brand-lead{font-size:15px;font-weight:500;color:var(--on-navy);line-height:1.5;margin:18px 0 8px;}
+.footer-brand-desc{font-size:14px;color:var(--on-navy-silver);line-height:1.65;margin:0 0 14px;}
 .footer-brand-hq{font-size:13px;color:var(--on-navy-silver);margin-bottom:8px;}
 .footer-brand-hubs{font-size:12px;color:var(--on-navy-silver);letter-spacing:0.02em;line-height:1.5;}
 .footer-cols{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:32px 40px;}
