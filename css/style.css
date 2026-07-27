@@ -524,6 +524,27 @@ a.eco-talent-node:hover{
 }
 .team-modal-bio p{font-size:15px;color:var(--body);margin-top:1.65em;line-height:1.65;}
 .team-modal-bio p:first-child{margin-top:0;}
+.team-modal-lead{font-size:15.5px;color:var(--body);}
+.team-modal-section{margin-top:1.85em;padding-top:1.65em;border-top:1px solid var(--line);}
+.team-modal-label{
+  font-size:11px;color:var(--accent);letter-spacing:0.08em;margin-bottom:14px;
+}
+.team-modal-roles{display:flex;flex-direction:column;gap:16px;}
+.team-modal-role{display:flex;flex-direction:column;gap:4px;}
+.team-modal-role strong{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.4;}
+.team-modal-role span{font-size:14px;color:var(--silver);line-height:1.5;}
+.team-modal-role-note{font-size:13.5px;color:var(--silver);line-height:1.55;margin-top:2px;}
+.team-modal-list{
+  margin:0;padding-left:18px;font-size:14.5px;color:var(--body);line-height:1.65;
+}
+.team-modal-list li + li{margin-top:8px;}
+.team-modal-list a{color:var(--accent);text-decoration:none;}
+.team-modal-list a:hover{text-decoration:underline;}
+.team-modal-connect{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:0;}
+.team-modal-connect a{
+  font-size:14px;font-weight:600;color:var(--accent);text-decoration:none;
+}
+.team-modal-connect a:hover{text-decoration:underline;}
 .team-modal-bio .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.65em;}
 .team-modal-bio .tags span{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--silver);
   border:1px solid var(--line);padding:3px 9px;border-radius:20px;}
