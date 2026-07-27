@@ -1,0 +1,8 @@
+{
+  "name": "caiglobal-ai-v3",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync-chrome": "node scripts/sync-chrome.mjs"
+  }
+}

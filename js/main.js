@@ -33,7 +33,7 @@ function setOverlayInert(active) {
   }
 
   syncLayoutVars();
-  window.addEventListener('resize', syncLayoutVars);
+  window.addEventListener('resize', syncLayoutVars, { passive: true });
 })();
 
 // Mobile hamburger navigation
@@ -117,7 +117,7 @@ function setOverlayInert(active) {
 
   window.addEventListener('resize', () => {
     if (window.innerWidth > 900) closeMenu();
-  });
+  }, { passive: true });
 
   window.__caiCloseMobileNav = closeMenu;
 })();
@@ -125,13 +125,15 @@ function setOverlayInert(active) {
 // Nav active state from current path
 (function () {
   function navKey(pathname) {
-    if (pathname === '/' || (pathname.endsWith('/index.html') && pathname.split('/').filter(Boolean).length <= 1)) {
-      return 'home';
-    }
+    if (pathname === '/' || pathname === '/index.html') return 'home';
     if (pathname.includes('/content')) return 'content';
     if (pathname.includes('/ecosystem')) return 'ecosystem';
     if (pathname.includes('/studio')) return 'studio';
-    const file = pathname.split('/').pop() || '';
+    const segments = pathname.split('/').filter(Boolean);
+    const file = segments[segments.length - 1] || '';
+    if (file === 'index.html' && segments.length > 1) {
+      return segments[segments.length - 2];
+    }
     return file.replace('.html', '') || 'home';
   }
 

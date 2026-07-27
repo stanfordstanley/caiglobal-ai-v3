@@ -12,19 +12,28 @@ Live site: `https://caiglobal.ai`
 ├── team.html               # Team
 ├── content/index.html      # Content (News · Research · Books)
 ├── studio.html             # AI Venture Studio
+├── studio/for-founders/    # Studio audience pages
+├── studio/for-companies/
+├── studio/for-partners/
 ├── portfolio.html          # Studio pipeline + advisory
 ├── ecosystem/index.html    # Hubs + trusted ecosystem
+├── ecosystem/network/      # Full partner network
+├── future-leaders/         # Future Leaders Initiative
 ├── connect.html            # Contact
-├── news.html               # Redirect → /content/
-├── corridor.html           # Redirect → /ecosystem/
+├── terms.html · privacy.html
+├── 404.html                # GitHub Pages not-found page
+├── robots.txt · sitemap.xml
+├── news.html · news/       # Redirect → /content/
+├── corridor.html · corridor/  # Redirect → /ecosystem/
+├── partials/               # Footer + research banner (source for sync-chrome)
+├── scripts/sync-chrome.mjs # Propagate partials to all HTML pages
+├── package.json            # npm run sync-chrome
 ├── css/style.css           # Shared stylesheet
-├── js/main.js              # Scroll reveal + site-wide white paper banner
+├── js/main.js              # Mobile nav, scroll reveal, team modal, scroll-spy
 ├── img/
-│   ├── logo.png            # Header logo (light background)
-│   ├── logo-dark.png       # Footer logo (dark background)
-│   ├── favicon.png         # Browser tab icon
-│   ├── books/              # Book cover images
-│   └── content/            # Content page media
+│   ├── logo.png · logo-dark.png
+│   ├── cai-favicon-dark.png
+│   ├── books/ · content/ · ecosystem/ · team/
 ├── research/               # White paper PDFs
 ├── CNAME                   # Custom domain (caiglobal.ai)
 └── .nojekyll               # GitHub Pages — disable Jekyll
@@ -41,25 +50,28 @@ Live site: `https://caiglobal.ai`
 | Ecosystem | `/ecosystem/` |
 | Connect   | `/connect.html` |
 
+Footer adds Studio subpages, Future Leaders, Terms, Privacy, and social links.
+
 ## Content page (`/content/`)
 
 Three sections with sticky sub-navigation:
 
-- **News** — Luma calendar + CAI Nexus I, II, III roundtables
-- **Research** — Nexus IV white paper (CAI × HFTC), with PDF downloads
+- **News** — CAI Nexus roundtables + Luma archive link
+- **Research** — CAI × HFTC AI Governance White Paper, with PDF downloads
 - **Books** — Translation and contribution publications
 
 ## Site-wide features
 
-- **White paper banner** — Injected on every page via `js/main.js` (Harvard AI × HFTC Policy White Paper 2026 No.1)
-- **Logo & favicon** — PNG assets in `img/`; all asset paths are root-relative (`/img/...`)
-- **Redirects** — `/news` → `/content/`, `/corridor` → `/ecosystem/`
+- **White paper banner** — Inline HTML on content pages (EN/CN PDF + link to `/content/#research`)
+- **Logo & favicon** — PNG assets in `img/`; paths are root-relative (`/img/...`)
+- **Redirects** — `/news`, `/news.html`, `/corridor`, `/corridor.html` → Content / Ecosystem
+- **Legacy** — `/studio/for-investors/` redirects to `/studio/for-partners/`
 
 ## Deploying with GitHub Pages
 
 1. Push to GitHub, branch `main`.
 2. **Settings → Pages** → Source: `Deploy from a branch`, branch `main`, folder `/ (root)`.
-3. Custom domain `caiglobal.ai` is set via `CNAME` + DNS (four GitHub Pages A records + `www` CNAME).
+3. Custom domain `caiglobal.ai` is set via `CNAME` + DNS.
 
 ## Design system
 
@@ -73,3 +85,8 @@ Brand palette (CSS custom properties in `css/style.css`):
 | `--ink` | `#0F1117` | Headings on light background |
 
 Typography: **Space Grotesk** (display), **Inter** (body), **IBM Plex Mono** (labels).
+
+## Maintenance notes
+
+- **Shared chrome:** Edit `partials/footer.html` or `partials/research-banner.html`, then run `npm run sync-chrome` (requires Node.js) to propagate across all pages.
+- Header, research banner, and footer are duplicated in HTML until sync is run — the partials + script reduce drift risk.
