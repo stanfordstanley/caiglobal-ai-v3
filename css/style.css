@@ -724,14 +724,17 @@ a.eco-talent-node:hover{
 .cta-section .hero-cta{justify-content:center;margin-top:34px;}
 
 footer{padding:50px 0 40px;background:var(--navy-2);color:var(--on-navy);}
-.footer-grid{display:grid;grid-template-columns:minmax(280px,380px) minmax(0,1fr);gap:40px 48px;align-items:start;}
+.footer-grid{display:grid;grid-template-columns:minmax(280px,400px) minmax(0,1fr);gap:40px 44px;align-items:start;}
 @media(max-width:900px){.footer-grid{grid-template-columns:1fr;gap:36px;}}
-.footer-brand{max-width:100%;min-width:0;padding-right:16px;}
+.footer-brand{max-width:100%;min-width:0;padding-right:20px;}
 .footer-brand-logo{margin-bottom:0;}
 .footer-brand-line{font-size:13px;color:var(--on-navy-silver);line-height:1.65;margin:0 0 8px;}
 .footer-brand-line:first-of-type{margin-top:18px;}
 .footer-brand-line:last-of-type{margin-bottom:0;}
-.footer-brand-hubs{letter-spacing:0.01em;max-width:100%;}
+.footer-brand-meta{font-size:11px;line-height:1.45;white-space:nowrap;}
+.footer-brand-hubs{letter-spacing:0;}
+@media(max-width:1180px) and (min-width:901px){.footer-brand-meta{font-size:10px;}}
+@media(max-width:900px){.footer-brand-meta{white-space:normal;}}
 .footer-brand-line a{color:inherit;text-decoration:none;}
 .footer-brand-line a:hover{color:var(--on-navy);text-decoration:underline;}
 .footer-cols{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:32px 40px;}
