@@ -765,6 +765,101 @@ footer{padding:50px 0 40px;background:var(--navy-2);color:var(--on-navy);}
 .footer-legal a{color:var(--on-navy-silver);text-decoration:none;}
 .footer-legal a:hover{color:var(--on-navy);}
 
+/* Ecosystem case study (Suzhou) ---------------------------------------------*/
+.eco-case-subtitle{
+  font-family:'Space Grotesk',sans-serif;font-size:clamp(18px,2.4vw,22px);
+  font-weight:500;color:var(--on-navy);margin-top:12px;position:relative;z-index:1;
+}
+.eco-case-photo-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;
+}
+.eco-case-photo{margin:0;}
+.eco-case-photo img{
+  width:100%;aspect-ratio:16/10;object-fit:cover;display:block;
+  border-radius:10px;border:1px solid var(--line);
+}
+.eco-case-photo figcaption{
+  display:flex;flex-direction:column;gap:6px;margin-top:14px;
+}
+.eco-case-photo figcaption strong{
+  font-family:'Space Grotesk',sans-serif;font-size:14.5px;font-weight:600;
+  color:var(--ink);line-height:1.35;
+}
+.eco-case-photo figcaption span{font-size:13px;color:var(--silver);line-height:1.55;}
+.eco-case-label{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);
+  letter-spacing:0.06em;margin-top:28px;
+}
+.eco-case-label--spaced{margin-top:40px;}
+.eco-case-list{
+  margin-top:14px;padding-left:20px;max-width:640px;
+}
+.eco-case-list li{font-size:14.5px;color:var(--body);line-height:1.65;margin-top:6px;}
+.eco-case-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);margin-top:20px;
+}
+.eco-case-stat{background:var(--bg-card);padding:32px 28px;text-align:center;}
+.eco-case-stat-num{
+  font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,4vw,44px);
+  font-weight:600;color:var(--ink);line-height:1;
+}
+.eco-case-stat-label{
+  font-size:13px;color:var(--silver);margin-top:12px;line-height:1.5;
+}
+.eco-arch{margin-top:36px;}
+.eco-arch-center{
+  text-align:center;padding:36px 28px;border:1px solid var(--line);
+  background:var(--bg);margin-bottom:1px;
+}
+.eco-arch-center .mono{font-size:11px;color:var(--accent);letter-spacing:0.08em;}
+.eco-arch-center strong{
+  display:block;margin-top:10px;font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(20px,2.8vw,26px);font-weight:600;color:var(--ink);
+}
+.eco-arch-pillars{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+.eco-arch-pillar{background:var(--bg-card);padding:28px 24px;}
+.eco-arch-pillar h3{font-size:16px;font-weight:600;margin-bottom:14px;}
+.eco-arch-pillar ul{margin:0;padding-left:18px;}
+.eco-arch-pillar li{font-size:13.5px;color:var(--silver);line-height:1.6;margin-top:4px;}
+.eco-case-companies{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 14px;margin-top:28px;
+}
+.eco-case-company{
+  display:flex;flex-direction:column;gap:8px;padding:22px 20px;
+  border:1px solid var(--line);background:var(--bg-card);
+}
+.eco-case-company h3{font-size:15px;font-weight:600;line-height:1.3;}
+.eco-case-company p{font-size:13.5px;color:var(--silver);line-height:1.6;margin:0;}
+.eco-case-formula{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin-top:28px;padding:24px 28px;border:1px solid var(--line);background:var(--bg);
+  font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,2vw,18px);
+  font-weight:600;color:var(--ink);
+}
+.eco-case-formula-op{color:var(--accent);font-weight:500;}
+.eco-case-formula-note{
+  margin-top:16px;font-size:14px;color:var(--silver);line-height:1.6;
+}
+.eco-case-regions{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;
+}
+.eco-case-regions span{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);
+  letter-spacing:0.05em;border:1px solid rgba(13,71,161,0.28);
+  background:rgba(13,71,161,0.06);padding:8px 14px;border-radius:20px;
+}
+.eco-case-cta{display:inline-block;margin-top:28px;}
+@media(max-width:900px){
+  .eco-case-photo-grid{grid-template-columns:1fr;}
+  .eco-case-stats{grid-template-columns:1fr;}
+  .eco-arch-pillars{grid-template-columns:1fr;}
+  .eco-case-companies{grid-template-columns:1fr;}
+}
+
 /* Motion / a11y ---------------------------------------------------------------*/
 .reveal{opacity:1;transform:none;}
 .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
