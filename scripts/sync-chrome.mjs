@@ -27,6 +27,7 @@ const CANONICAL = {
   path.join('content', 'index.html'): 'https://caiglobal.ai/content/',
   path.join('ecosystem', 'index.html'): 'https://caiglobal.ai/ecosystem/',
   path.join('ecosystem', 'network', 'index.html'): 'https://caiglobal.ai/ecosystem/network/',
+  path.join('ecosystem', 'corridor', 'index.html'): 'https://caiglobal.ai/ecosystem/corridor/',
   path.join('ecosystem', 'suzhou', 'index.html'): 'https://caiglobal.ai/ecosystem/suzhou/',
   path.join('future-leaders', 'index.html'): 'https://caiglobal.ai/future-leaders/',
   path.join('studio', 'for-founders', 'index.html'): 'https://caiglobal.ai/studio/for-founders/',

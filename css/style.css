@@ -853,11 +853,51 @@ footer{padding:50px 0 40px;background:var(--navy-2);color:var(--on-navy);}
   background:rgba(13,71,161,0.06);padding:8px 14px;border-radius:20px;
 }
 .eco-case-cta{display:inline-block;margin-top:28px;}
+.eco-case-photo--hero img{aspect-ratio:21/9;}
+.eco-case-photo--inline{margin-top:28px;}
+.eco-case-city-cards{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px;margin-top:28px;
+}
+.eco-case-city-card{
+  padding:28px 24px;border:1px solid var(--line);background:var(--bg-card);
+}
+.eco-case-city-card-head .mono{font-size:11px;color:var(--accent);letter-spacing:0.08em;}
+.eco-case-city-card-head h3{font-size:18px;margin-top:10px;font-weight:600;}
+.eco-case-list--flush{margin-top:14px;max-width:none;}
+.eco-case-bridge-statement{
+  margin-top:32px;font-size:15px;color:var(--body);line-height:1.65;max-width:720px;
+}
+.eco-case-timeline{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);margin-top:28px;
+}
+.eco-case-timeline-item{background:var(--bg-card);padding:32px 28px;}
+.eco-case-timeline-year{
+  font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.5vw,40px);
+  font-weight:600;color:var(--ink);line-height:1;
+}
+.eco-case-timeline-label{
+  font-size:15px;font-weight:600;color:var(--ink);margin-top:12px;line-height:1.35;
+}
+.eco-case-timeline-item p{
+  font-size:13.5px;color:var(--silver);margin-top:12px;line-height:1.6;
+}
+.eco-case-credential{margin-top:0;}
+.eco-case-credential-head .mono{font-size:11px;color:var(--accent);letter-spacing:0.08em;}
+.eco-case-credential-head .section-h2{margin-top:10px;}
+.eco-case-credential-sub{
+  font-size:clamp(16px,2vw,19px);color:var(--silver);margin-top:10px;font-weight:500;
+  font-family:'Space Grotesk',sans-serif;
+}
+.eco-case-split{margin-top:24px;}
+.eco-arch-pillars--corridor{margin-top:28px;}
 @media(max-width:900px){
   .eco-case-photo-grid{grid-template-columns:1fr;}
   .eco-case-stats{grid-template-columns:1fr;}
   .eco-arch-pillars{grid-template-columns:1fr;}
   .eco-case-companies{grid-template-columns:1fr;}
+  .eco-case-city-cards{grid-template-columns:1fr;}
+  .eco-case-timeline{grid-template-columns:1fr;}
 }
 
 /* Motion / a11y ---------------------------------------------------------------*/
