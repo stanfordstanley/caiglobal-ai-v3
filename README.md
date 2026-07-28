@@ -18,13 +18,15 @@ Live site: `https://caiglobal.ai`
 ├── portfolio.html          # Studio pipeline + advisory
 ├── ecosystem/index.html    # Hubs + trusted ecosystem
 ├── ecosystem/network/      # Full partner network
+├── ecosystem/corridor/     # Hong Kong–Shenzhen case study
+├── ecosystem/suzhou/       # Suzhou AI × Life Science case study
 ├── future-leaders/         # Future Leaders Initiative
 ├── connect.html            # Contact
 ├── terms.html · privacy.html
 ├── 404.html                # GitHub Pages not-found page
 ├── robots.txt · sitemap.xml
 ├── news.html · news/       # Redirect → /content/
-├── corridor.html · corridor/  # Redirect → /ecosystem/
+├── corridor.html · corridor/  # Redirect → /ecosystem/corridor/
 ├── partials/               # Footer + research banner (source for sync-chrome)
 ├── scripts/sync-chrome.mjs # Propagate partials to all HTML pages
 ├── package.json            # npm run sync-chrome
@@ -64,7 +66,7 @@ Three sections with sticky sub-navigation:
 
 - **White paper banner** — Inline HTML on content pages (EN/CN PDF + link to `/content/#research`)
 - **Logo & favicon** — PNG assets in `img/`; paths are root-relative (`/img/...`)
-- **Redirects** — `/news`, `/news.html`, `/corridor`, `/corridor.html` → Content / Ecosystem
+- **Redirects** — `/news`, `/news.html` → Content; `/corridor`, `/corridor.html` → `/ecosystem/corridor/`
 - **Legacy** — `/studio/for-investors/` redirects to `/studio/for-partners/`
 
 ## Deploying with GitHub Pages

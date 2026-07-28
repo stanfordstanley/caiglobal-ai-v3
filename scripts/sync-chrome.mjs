@@ -8,12 +8,15 @@ const root = path.join(__dirname, '..');
 const footer = fs.readFileSync(path.join(root, 'partials/footer.html'), 'utf8').trim();
 const banner = fs.readFileSync(path.join(root, 'partials/research-banner.html'), 'utf8').trim();
 
+const SKIP_DIRS = new Set(['partials', 'scripts', 'node_modules', '.git']);
+
 const SKIP = new Set([
+  '404.html',
   'news.html',
   'corridor.html',
-  path.join('news', 'index.html'),
-  path.join('corridor', 'index.html'),
-  path.join('studio', 'for-investors', 'index.html'),
+  'news/index.html',
+  'corridor/index.html',
+  'studio/for-investors/index.html',
 ]);
 
 const CANONICAL = {
@@ -24,19 +27,20 @@ const CANONICAL = {
   'connect.html': 'https://caiglobal.ai/connect.html',
   'terms.html': 'https://caiglobal.ai/terms.html',
   'privacy.html': 'https://caiglobal.ai/privacy.html',
-  path.join('content', 'index.html'): 'https://caiglobal.ai/content/',
-  path.join('ecosystem', 'index.html'): 'https://caiglobal.ai/ecosystem/',
-  path.join('ecosystem', 'network', 'index.html'): 'https://caiglobal.ai/ecosystem/network/',
-  path.join('ecosystem', 'corridor', 'index.html'): 'https://caiglobal.ai/ecosystem/corridor/',
-  path.join('ecosystem', 'suzhou', 'index.html'): 'https://caiglobal.ai/ecosystem/suzhou/',
-  path.join('future-leaders', 'index.html'): 'https://caiglobal.ai/future-leaders/',
-  path.join('studio', 'for-founders', 'index.html'): 'https://caiglobal.ai/studio/for-founders/',
-  path.join('studio', 'for-companies', 'index.html'): 'https://caiglobal.ai/studio/for-companies/',
-  path.join('studio', 'for-partners', 'index.html'): 'https://caiglobal.ai/studio/for-partners/',
+  'content/index.html': 'https://caiglobal.ai/content/',
+  'ecosystem/index.html': 'https://caiglobal.ai/ecosystem/',
+  'ecosystem/network/index.html': 'https://caiglobal.ai/ecosystem/network/',
+  'ecosystem/corridor/index.html': 'https://caiglobal.ai/ecosystem/corridor/',
+  'ecosystem/suzhou/index.html': 'https://caiglobal.ai/ecosystem/suzhou/',
+  'future-leaders/index.html': 'https://caiglobal.ai/future-leaders/',
+  'studio/for-founders/index.html': 'https://caiglobal.ai/studio/for-founders/',
+  'studio/for-companies/index.html': 'https://caiglobal.ai/studio/for-companies/',
+  'studio/for-partners/index.html': 'https://caiglobal.ai/studio/for-partners/',
 };
 
 function walk(dir, files = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (SKIP_DIRS.has(entry.name)) continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) walk(full, files);
     else if (entry.name.endsWith('.html')) files.push(full);

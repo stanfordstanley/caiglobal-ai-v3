@@ -182,7 +182,7 @@ h1.mission{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--on
 section.block{padding:100px 0;border-bottom:1px solid var(--line);}
 section.block.block--end{border-bottom:none;}
 section.block.block--card{background:var(--bg-card);}
-.section-h2{font-size:clamp(26px,3.4vw,38px);margin-top:14px;}
+.section-h2,.section-head h2{font-size:clamp(26px,3.4vw,38px);margin-top:14px;}
 .page-hero--tall{min-height:60vh;display:flex;align-items:center;}
 .page-hero--tall > .wrap{width:100%;}
 .kicker--center{justify-content:center;margin-bottom:20px;}
@@ -190,7 +190,6 @@ section.block.block--card{background:var(--bg-card);}
 .text-link-accent:hover{text-decoration:underline;}
 .section-follow{margin-top:24px;}
 .section-head{max-width:100%;margin-bottom:50px;}
-.section-head h2{font-size:clamp(26px,3.4vw,38px);margin-top:14px;}
 .section-head p{color:var(--silver);margin-top:14px;font-size:15.5px;}
 .section-lead{color:var(--silver);margin-top:14px;font-size:15.5px;line-height:1.65;max-width:100%;}
 .section-note{margin-top:24px;color:var(--silver);font-size:13px;max-width:100%;}
@@ -580,8 +579,8 @@ a.eco-talent-node:hover{
   .leadership-grid{max-width:100%;}
   .advisor-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 12px;}
   .advisor-domain{font-size:10px;margin-top:8px;}
-  .leader-card h3{font-size:15px;}
-  .leader-title{font-size:11px;}
+  .leader-card h3{font-size:16px;}
+  .leader-title{font-size:12px;}
   .team-modal-body{padding:32px 24px 28px;}
   .team-modal-head{flex-direction:column;align-items:flex-start;gap:14px;}
 }
@@ -853,7 +852,8 @@ footer{padding:50px 0 40px;background:var(--navy-2);color:var(--on-navy);}
   background:rgba(13,71,161,0.06);padding:8px 14px;border-radius:20px;
 }
 .eco-case-cta{display:inline-block;margin-top:28px;}
-.eco-case-photo--hero img{aspect-ratio:21/9;}
+.eco-case-photo--hero img{aspect-ratio:21/9;object-fit:cover;}
+.eco-case-photo--hero-map img{aspect-ratio:21/9;object-fit:contain;background:var(--navy);}
 .eco-case-photo--inline{margin-top:28px;}
 .eco-case-city-cards{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px;margin-top:28px;
