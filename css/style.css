@@ -792,7 +792,7 @@ footer{padding:50px 0 40px;background:var(--navy-2);color:var(--on-navy);}
 }
 .eco-case-label--spaced{margin-top:40px;}
 .eco-case-list{
-  margin-top:14px;padding-left:20px;max-width:640px;
+  margin-top:14px;padding-left:20px;max-width:100%;
 }
 .eco-case-list li{font-size:14.5px;color:var(--body);line-height:1.65;margin-top:6px;}
 .eco-case-stats{
@@ -865,7 +865,7 @@ footer{padding:50px 0 40px;background:var(--navy-2);color:var(--on-navy);}
 .eco-case-city-card-head h3{font-size:18px;margin-top:10px;font-weight:600;}
 .eco-case-list--flush{margin-top:14px;max-width:none;}
 .eco-case-bridge-statement{
-  margin-top:32px;font-size:15px;color:var(--body);line-height:1.65;max-width:720px;
+  margin-top:32px;font-size:15px;color:var(--body);line-height:1.65;max-width:100%;
 }
 .eco-case-timeline{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;
@@ -891,6 +891,12 @@ footer{padding:50px 0 40px;background:var(--navy-2);color:var(--on-navy);}
 }
 .eco-case-split{margin-top:24px;}
 .eco-arch-pillars--corridor{margin-top:28px;}
+.eco-case-page .section-lead,
+.eco-case-page .section-note,
+.eco-case-page .eco-case-formula-note,
+.eco-case-page .eco-case-credential-sub,
+.eco-case-page .page-hero p{max-width:100%;}
+.eco-case-page .eco-case-photo figcaption span{max-width:100%;}
 @media(max-width:900px){
   .eco-case-photo-grid{grid-template-columns:1fr;}
   .eco-case-stats{grid-template-columns:1fr;}
