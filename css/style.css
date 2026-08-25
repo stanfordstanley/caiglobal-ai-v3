@@ -456,11 +456,6 @@ a.eco-talent-node:hover{
 .leader-photo-btn:focus-visible .leader-photo--bw,
 .leader-photo-btn.is-active .leader-photo--bw,
 .leader-photo-btn:active .leader-photo--bw{opacity:0;}
-.leader-photo-btn--static .leader-photo--color{opacity:1;}
-.leader-photo-btn--static:hover .leader-photo--color,
-.leader-photo-btn--static:focus-visible .leader-photo--color,
-.leader-photo-btn--static.is-active .leader-photo--color,
-.leader-photo-btn--static:active .leader-photo--color{opacity:1;}
 .advisory-founders{margin-bottom:8px;}
 @media (prefers-reduced-motion:reduce){
   .leader-photo{transition:none;}
