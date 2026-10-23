@@ -456,7 +456,13 @@ a.eco-talent-node:hover{
 .leader-photo-btn:focus-visible .leader-photo--bw,
 .leader-photo-btn.is-active .leader-photo--bw,
 .leader-photo-btn:active .leader-photo--bw{opacity:0;}
-.advisory-founders{margin-bottom:8px;}
+.advisory-founders{margin-bottom:8px;max-width:960px;grid-template-columns:repeat(3,minmax(0,1fr));}
+@media(max-width:900px){
+  .advisory-founders{grid-template-columns:repeat(2,minmax(0,1fr));max-width:640px;}
+}
+@media(max-width:640px){
+  .advisory-founders{grid-template-columns:1fr;max-width:280px;}
+}
 @media (prefers-reduced-motion:reduce){
   .leader-photo{transition:none;}
 }
@@ -470,6 +476,8 @@ a.eco-talent-node:hover{
 }
 .leader-card h3{font-size:18px;margin-top:12px;}
 .leader-title{font-size:13px;color:var(--silver);margin-top:6px;line-height:1.45;}
+.leader-title--meta{font-size:12px;margin-top:4px;line-height:1.5;}
+.advisory-founders .leader-card h3 + .leader-title{margin-top:10px;}
 .leader-more{
   margin-top:12px;padding:0;border:none;background:none;
   font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;
@@ -522,6 +530,7 @@ a.eco-talent-node:hover{
 .team-modal-head-text{min-width:0;flex:1;}
 .team-modal-head h2{font-size:26px;}
 .team-modal-head .leader-title{margin-top:6px;}
+.team-modal-head .leader-title--meta{margin-top:4px;}
 .team-modal-social{
   display:flex;align-items:center;gap:10px;margin-top:14px;
 }
